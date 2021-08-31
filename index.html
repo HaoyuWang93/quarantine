@@ -1,0 +1,28 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>QUARANTINE</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<body>
+
+<style>
+div.a-enter-ar {
+  visibility: hidden;
+}
+
+</style>
+
+<a-scene vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+  <a-assets>
+    <video id="1" autoplay loop="true" src="VR1.mp4"> </video>
+  </a-assets>
+
+  <a-videosphere src="#1"></a-videosphere>
+
+</a-scene>
+
+</body>
+</html
