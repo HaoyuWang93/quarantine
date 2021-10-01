@@ -2,8 +2,9 @@
 <!doctype html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>QUARANTINE</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <body>
@@ -15,10 +16,13 @@ div.a-enter-ar {
 
 </style>
 
-<a-scene vr-mode-ui="arEnabled:false" loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene loading-screen="dotsColor: white; backgroundColor: black">
 
-  <a-videosphere src="test.mp4"></a-videosphere>
+  <a-assets>
+    <video id="quarantine" autoplay loop="true" src="video/test.mp4"></video>
+  </a-assets>
 
+  <a-sky src="#quarantine" rotation="0 180 0"></a-sky>
 </a-scene>
 
 </body>
