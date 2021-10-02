@@ -4,9 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title>QUARANTINE</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
 <script src="aframe/aframe.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<script>
+  AFRAME.registerComponent("playstart", {
+    init: function () {
+      var myControl = document.querySelector("#control")
+      var myVideo = document.querySelector("#quarantine");
+      this.el.addEventListener("click", function () {
+          myControl.setAttribute("visible", false);
+          myVideo.play();
+      }, {once: true})
+    }
+  })
+</script>
 <body>
 
 <style>
@@ -16,13 +29,20 @@ div.a-enter-ar {
 
 </style>
 
-<a-scene loading-screen="dotsColor: white; backgroundColor: black">
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse: true"
+loading-screen="dotsColor: white; backgroundColor: black">
 
   <a-assets>
-    <video id="quarantine" autoplay loop="true" src="video/test.mp4"></video>
+    <video id="quarantine" autoplay="false" loop="true" src="video/test.mp4"
+    webkit-playsinline playsinline></video>
+    <img id="button" src="images/playcir.png">
   </a-assets>
 
-  <a-sky src="#quarantine" rotation="0 180 0"></a-sky>
+  <a-videosphere src="#quarantine" rotation="0 180 0"></a-videosphere>
+
+  <a-image class="clickable" id="control" src="#button"
+  position="0 1.6 -0.7" scale="1 1 1" opacity="0.5"
+  playstart></a-image>
 </a-scene>
 
 </body>
