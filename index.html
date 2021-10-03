@@ -40,15 +40,26 @@ div.a-enter-ar {
   <a-camera>
       <a-cursor id="cursor" fuse="true" fuse-timeout="10"
       crossorigin="anonymous" opacity="0"
-      raycaster="objects: .clickable" material="color: black; shader: flat"
-      animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 200; to: 0 0 0">
+      raycaster="objects: .clickable" material="color: black; shader: flat">
     </a-cursor>
     </a-camera>
 
   <a-image class="clickable" id="control" src="#button"
-  position="0 1.6 -0.1" scale="5 5 5" opacity="0"
-  animation__off2="startEvents: click; property: scale; to: 0 0 0; dur: 100"
+  position="0 1.6 -1" scale="3 3 3" opacity="0"
   playstart></a-image>
+
+  <a-image class="clickable" id="control2" src="#button"
+  position="0 1.6 1" scale="3 3 3" opacity="0"
+  playstart></a-image>
+
+  <a-image class="clickable" id="control3" src="#button"
+  position="1 1.6 0" rotation="0 90 0" scale="3 3 3" opacity="0"
+  playstart></a-image>
+
+  <a-image class="clickable" id="control4" src="#button"
+  position="-1 1.6 0" rotation="0 -90 0" scale="3 3 3" opacity="0"
+  playstart></a-image>
+
 </a-scene>
 
 </body>
